@@ -1,0 +1,18 @@
+RÉCUPÉRER LE PROJET
+
+
+1. Allez sur la page Github du projet à copier
+
+2. Cliquez sur Code (bouton vert)
+
+3. Vérifiez qu'il soit écrit Clone HTTPS (et non Clone SSH, si ce n'est pas bon, cliquez sur HTTPS)
+
+4. Copiez l'URL qui est dans le champ input
+
+5. Ouvrez un terminal dans le dossier dans lequel le projet se situera (ATTENTION ! Le dossier qui ACCUEILLERA le projet ! C'est à dire par exemple c:/users/tomsihap/projects, pas besoin de créer à la main le sous dossier du futur projet !!)
+
+6. Saisissez la ligne suivante :
+
+	git clone https://github.com/sandra-f/WhyNotYou.git
+
+7. Le dossier WhyNotYou devrait maintenant être cloné !
