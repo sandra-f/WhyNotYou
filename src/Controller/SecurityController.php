@@ -3,31 +3,34 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends AbstractController
 {
     /**
-     * Login - Route
+     * @Route("/login", name="app_login")
      */
-    public function login(AuthenticationUtils $authenticationUtils)
+    public function login(AuthenticationUtils $authenticationUtils): Response
     {
-        # retrouver une erreur d'authentification s'il y en a 
+        // if ($this->getUser()) {
+        //     return $this->redirectToRoute('target_path');
+        // }
+
+        // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
-        # retrouver le dernier identifiant de connexion utilisé
+        // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
 
-        #return $this->render('chemin.html.twig', [
-        #    'last_username' => $lastUsername,
-        #    'error' => $error,]);
+        return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
     }
 
     /**
-     * Logout - Route
+     * @Route("/logout", name="app_logout")
      */
-    public function logout(): void
+    public function logout()
     {
-        throw new \Exception('Erreur de connexion');
+        throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
     }
 }
