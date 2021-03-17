@@ -1,21 +1,14 @@
 {% extends 'base.html.twig' %}
-{{% include('inc/header-footer.html.twig')%}}
 
-{% block stylesheets %}
 
-        
-        <!-- CSS only -->
-        
-        
-
-{% endblock %}
 
 {% block title %}Why not you?{% endblock %}
 
-<div class="container-fluide">
+
 
 {% block body %}
-
+{#{{ include('header/header-footer.html.twig', {'header': header})}#}
+        <div class="container-fluid">
             <div>
 
                 <a class="button" href="#">Inscrit toi !</a>
@@ -125,7 +118,7 @@
             </div>
         </div>
     </section>
-
+{#{{ include('footer/header-footer.html.twig', {'footer': footer})}}#}
 {%endblock%}
 
-</div>
+
