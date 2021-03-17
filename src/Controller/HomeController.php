@@ -5,7 +5,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
-class FacetagramController extends AbstractController
+class HomeController extends AbstractController
 {
 #Route Home
 public function home()
