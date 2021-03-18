@@ -13,7 +13,7 @@ class UserController extends AbstractController
 {
 
     /**
-     * Show user 
+     * @Route("/show/user", name="show_user")
      */
      public function show(Request $request)
     {
@@ -29,7 +29,7 @@ class UserController extends AbstractController
    
 
     /**
-     * Edit user 
+     * @Route("/edit/user", name="edit_user")
      */
     public function edit(Request $request, User $user)
     {
@@ -46,7 +46,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * Delete user
+     * @Route("/delete/user", name="delete_user")
      */
     public function delete(User $user)
     {
@@ -55,7 +55,7 @@ class UserController extends AbstractController
         $em->flush();
 
         #Redirection vers la home page
-        return $this->redirectToRoute('home');
+       # return $this->redirectToRoute('home');
     }
 
 }
