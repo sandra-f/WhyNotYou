@@ -194,4 +194,12 @@ class User implements UserInterface
         return $this;
     }
 
+
+    /**
+     * Get the value of matching
+     */ 
+    public function getMatching()
+    {
+        return $this->matching;
+    }
 }
