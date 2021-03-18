@@ -1,0 +1,149 @@
+body {
+    background: rgb(165, 82, 82);
+    color: white;
+	font-size: 1rem;
+    line-height: 2;
+}
+
+.container{
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.button{
+    width: 300%;
+    border-radius: 30px;
+    margin-right: 30px;
+    background-color: rgb(243, 243, 243); 
+}
+
+
+.temoignage{
+    display: flex;
+    border: 3px solid rgb(175, 154, 154);
+    flex-direction: column;
+    padding: 20px;    
+}
+p .temoignage {
+    color: black;
+}
+
+p{
+    font-family: 'Great Vibes';
+    font-size: 40px;
+}
+
+a{
+    color: rgb(46, 15, 15);
+   text-decoration: none;
+}
+
+a:hover{
+    color: palevioletred;
+}
+
+.margebutton{
+    width: 100%;
+       
+}
+
+a, .margebutton{
+    text-align: center;
+    font-size: 100px;
+    font-family: 'Great Vibes', cursive;
+    
+}
+a .rejoint{
+    font-size: 70px;
+    padding-left: 150px;
+}
+
+a, .you-h1{
+    font-size: 85px;
+}
+
+
+h1{
+    padding-top: 10px;
+}
+h1, h2, h3{
+    font-family: 'Great Vibes', cursive;
+    font-size:100px;
+}
+
+
+p, h1,#matching{
+    text-align: center;
+    
+}
+
+#matching{
+    margin-top: 60px;
+}
+
+span{
+    color: rgb(168, 53, 11);
+}
+.carousel-inner{
+    
+    width:300%;
+}
+
+.card-body{
+    
+    color: rgb(46, 15, 15);
+    
+}
+.card-body p {
+    
+    font-size: 20px;
+}
+
+
+.flex-article{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.flotage-droit{
+    float: right;
+}
+
+.flotage-gauche{
+    float: left;
+}
+
+.container-fluid{
+    padding-bottom: 100px;
+}
+
+
+
+@media screen and (max-width: 1024px)
+{
+    p{
+        color: violet;
+    }
+
+    .flot-droit{
+        float: center;
+    }
+
+    .flotage-droit{
+        float: inline-start;
+    }
+    .margebutton{
+        width: 100%;
+        
+    }
+
+    a, .you-h1{
+        border-radius: 20px brown solid;
+
+
+    }
+}
