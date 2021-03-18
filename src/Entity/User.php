@@ -59,6 +59,12 @@ class User implements UserInterface
         $this->items = new ArrayCollection();
     }
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\User")
+     * @ORM\JoinTable(name="matching")
+     */
+    private $matching;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -187,4 +193,5 @@ class User implements UserInterface
 
         return $this;
     }
+
 }
