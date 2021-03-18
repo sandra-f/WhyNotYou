@@ -8,8 +8,9 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends AbstractController
 {
+    
     /**
-     * Login - Route
+     * @Route("/login", name="security_login")
      */
     public function login(AuthenticationUtils $authenticationUtils)
     {
@@ -24,7 +25,7 @@ class SecurityController extends AbstractController
     }
 
     /**
-     * Logout - Route
+     * @Route("/logout", name="security_logout")
      */
     public function logout(): void
     {
