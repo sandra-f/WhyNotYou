@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}préférences{% endblock %}
+
+{% block body %}
+
+    <h1>Mes préférences</h1>
+
+   {{ parent() }}
+    {{form(preferenceForm)}}
+
+{% endblock %}
