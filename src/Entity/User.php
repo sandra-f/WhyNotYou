@@ -65,6 +65,31 @@ class User implements UserInterface
      */
     private $matching;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $ecolo;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $vegan;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $sportif;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $econome;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $fetard;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -201,5 +226,65 @@ class User implements UserInterface
     public function getMatching()
     {
         return $this->matching;
+    }
+
+    public function getEcolo(): ?bool
+    {
+        return $this->ecolo;
+    }
+
+    public function setEcolo(bool $ecolo): self
+    {
+        $this->ecolo = $ecolo;
+
+        return $this;
+    }
+
+    public function getVegan(): ?bool
+    {
+        return $this->vegan;
+    }
+
+    public function setVegan(bool $vegan): self
+    {
+        $this->vegan = $vegan;
+
+        return $this;
+    }
+
+    public function getSportif(): ?bool
+    {
+        return $this->sportif;
+    }
+
+    public function setSportif(bool $sportif): self
+    {
+        $this->sportif = $sportif;
+
+        return $this;
+    }
+
+    public function getEconome(): ?bool
+    {
+        return $this->econome;
+    }
+
+    public function setEconome(bool $econome): self
+    {
+        $this->econome = $econome;
+
+        return $this;
+    }
+
+    public function getFetard(): ?bool
+    {
+        return $this->fetard;
+    }
+
+    public function setFetard(bool $fetard): self
+    {
+        $this->fetard = $fetard;
+
+        return $this;
     }
 }
