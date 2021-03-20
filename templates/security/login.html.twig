@@ -2,6 +2,17 @@
 
 {% block title %}Log in!{% endblock %}
 
+{%block head%}
+{{parent()}}
+    
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">   
+
+{%endblock%}
+
+
 {% block body %}
 <form method="post">
     {% if error %}
@@ -14,11 +25,28 @@
         </div>
     {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Connectez-vous</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
-    <label for="inputPassword">Mot de passe</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" required>
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
+                <form class="login100-form validate-form">
+                    <span class="login100-form-title p-b-55">
+                        Login
+                    </span>
+
+                    <div class="wrap-input100 validate-input m-b-16" data-validate="Valid email is required: ex@abc.xyz">    
+                        <input class="input100" type="text" value="{{ last_username }}" name="email" placeholder="Email">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <span class="lnr lnr-envelope"></span>
+                        </span>
+                    </div>
+                    <div class="wrap-input100 validate-input m-b-16" data-validate="Password is required">
+                        <input class="input100" type="password" name="pass" placeholder="Password">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <span class="lnr lnr-lock"></span>
+                        </span>
+                    </div>
 
     <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}"
@@ -35,8 +63,25 @@
         </div>
     #}
 
-    <button class="btn btn-lg btn-primary" type="submit">
-        Se connecter
-    </button>
-</form>
+                    <div class="container-login100-form-btn p-t-25">
+                        <button class="login100-form-btn">
+                            Se connecter
+                        </button>
+                    </div>
+
+                    <div class="text-center w-full p-t-115">
+                        <span class="txt1">
+                            Pas encore membre?
+                        </span>
+                        <a class="txt1 bo1 hov1" href="#">
+                            Créer un compte
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% block javascripts %}
+    <script src="js/main.js"></script>
+    {% endblock %}
 {% endblock %}

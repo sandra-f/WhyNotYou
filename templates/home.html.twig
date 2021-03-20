@@ -1,15 +1,20 @@
 {% extends 'base.html.twig' %}
 
-{% block stylesheets %}
-        
-        <!-- CSS only -->
-        
-        
+{%block head%}
 
+    <title>{% block title %}Why not you - Matchmaking high level{% endblock %}</title>
+    {% block stylesheets %}
+        {{parent()}}
+        <link rel="stylesheet" href="{{ asset('css/stylebody.css') }}" media="all">
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&family=Teko:wght@300&display=swap" rel="stylesheet"
     {% endblock %}
-
-
+{% endblock %}
 {% block body %}
+{%block header%}
+    {{parent()}}
+{% endblock %}
 
 <main>
     <section id="intro" class="bg py-5">
@@ -114,6 +119,9 @@
         
     </div>
     </main>
+    {%block footer%}
+    {{parent()}}
+    {%endblock%}
 </body>
 
 </div>
