@@ -1,36 +1,55 @@
 <!DOCTYPE html>
 <html>
     <head>
-    {% block head %}
+   
         <meta charset="UTF-8">
         <title>{% block title %}{% endblock %}</title>
-        {% block stylesheets %}
+        
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-        {% endblock %}
-    {% endblock %}
+        {% block stylesheets %}{% endblock %}
+  
     </head>
     <body>
-        {% block body %}
+        
         <header>
         {%block header%}
-                    <div class="container-fluid">
-                <div class="logo">
-                    <img src="" alt="">
-                </div>
-                
-                <div class="navbar-1">
-                    <nav class="navbar navbar-light bg-light">
-                        <a class="navbar-head" href=""></a>
-                        <a class="navbar-head" href=""></a>
-                        <a class="navbar-head" href=""></a>
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <a class="navbar-brand" href="{{ path('home') }}">WhyNotYou</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-                    </nav>
-                </div>
-               
-            </div>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    </div>
+
+
+                    <div class="collapse navbar-collapse justify-content-end">
+                    <ul class="navbar-nav ml-auto">
+
+                    {% if app.user %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Bienvenue, {{ app.user.username }} !</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('app_logout') }}" tabindex="-1" aria-disabled="true">Déconnexion</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('app_login') }}" tabindex="-1" aria-disabled="true">Se connecter</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('app_register') }}" tabindex="-1" aria-disabled="true">Créer un compte</a>
+                        </li>
+                    {% endif %}
+                    </ul>
+                    </div>
+
+                </nav>
         {%endblock%}
         </header>
+
+        {% block body %}{% endblock %}
 
         <footer>
         {%block footer%}
@@ -44,9 +63,7 @@
             <a class="navbar-head" href=""></a>
 
             </nav>
-            <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti dolorum, eveniet et, omnis iste non magni odit, inventore tempora dolorem mollitia similique tempore? Placeat vitae delectus repellat laboriosam consequatur cupiditate.
-            </p>
+          
         </div>
         {%endblock%}
         </footer>
@@ -54,6 +71,6 @@
     {% block javascripts %}
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     {% endblock %}
-    {% endblock %}
+    
     </body>
 </html>

@@ -1,16 +1,16 @@
-body {
+#contenu {
     background: rgb(165, 82, 82);
     color: white;
 	font-size: 1rem;
     line-height: 2;
 }
 
-p{
+#contenu p{
     font-family: 'Caveat', cursive;
     font-size: 40px;
 }
 
-a{
+#contenu a{
     color: rgb(46, 15, 15);
    text-decoration: none;
    text-align: center;
@@ -18,7 +18,7 @@ a{
     font-family: 'Great Vibes', cursive;
 }
 
-a:hover{
+#contenu a:hover{
     color: rgb(218, 206, 160);
 }
 
@@ -28,7 +28,7 @@ a:hover{
 }
 
 
-a, .you-h1{
+#contenu a, .you-h1{
     font-size: 85px;
     text-align: center;
 }
@@ -125,27 +125,3 @@ span{
     color: rgb(245, 130, 88);
 }
 
-
-@media screen and (max-width: 767px)
-{
-    body{
-        width: 100%;
-    }
-    p{
-        color: rgb(70, 69, 70);
-    }
-
-    
- 
-    
-    a, .you-h1{
-        border-radius: 20px brown solid;
-    }
-
-}
-
-@media screen and (min-width: 780px) and (max-width: 979px){
-    .conteneur-flex{
-        flex-flow: row wrap;
-    }
-}
