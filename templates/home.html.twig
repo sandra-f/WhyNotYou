@@ -7,16 +7,13 @@
         {{parent()}}
         <link rel="stylesheet" href="{{ asset('css/stylebody.css') }}" media="all">
         <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&family=Teko:wght@300&display=swap" rel="stylesheet"
-    {% endblock %}
+        <link rel="stylesheet" type="text/css" href="css/main.css">  
+        {% endblock %}
 {% endblock %}
 {% block body %}
-{%block header%}
-    {{parent()}}
-{% endblock %}
+    
 
-<main>
+<main id="contenu">
     <section id="intro" class="bg py-5">
             <div class="container mb-3">
                 <h1 class="text-white text-center my-5"><a href="">Rejoignez la communauté!</a></h1>

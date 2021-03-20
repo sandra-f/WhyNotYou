@@ -25,7 +25,7 @@
         <div class="container-login100">
             <div class="wrap-login100 p-l-50 p-r-50 p-t-60 p-b-30">
     {% if app.user %}
-        <div class="mb-4">
+        <div class="mb-3">
             Vous êtes enregistré en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
         </div>
     {% endif %}
