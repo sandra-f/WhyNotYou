@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil{% endblock %}
+
+{% block body %}
+
+    <h1>Mon Profil</h1>
+
+   {{ parent() }}
+    {{form(userForm)}}
+
+{% endblock %}
