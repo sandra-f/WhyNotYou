@@ -14,7 +14,7 @@
         
         <header>
         {%block header%}
-                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <nav class="navbar navbar-expand-lg login100">
                     <a class="navbar-brand" href="{{ path('home') }}">WhyNotYou</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -29,7 +29,7 @@
 
                     {% if app.user %}
                         <li class="nav-item">
-                            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Bienvenue, {{ app.user.username }} !</a>
+                            <a class="nav-link" href="{{ path('profil') }}" tabindex="-1" aria-disabled="true">Bienvenue, {{ app.user.username }} !</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path('app_logout') }}" tabindex="-1" aria-disabled="true">Déconnexion</a>
