@@ -1,12 +1,41 @@
 {% extends 'base.html.twig' %}
+    
+{% block title %}User profil{% endblock %}
 
-{% block title %}Profil{% endblock %}
+    {% block head %}
+        {{parent()}}
+            {% block stylesheets %}
+            <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+            <link rel="stylesheet" type="text/css" href="css/util.css">
+            <link rel="stylesheet" type="text/css" href="css/main.css">   
+            {% endblock %}
+    {% endblock %}
+
 
 {% block body %}
 
-    <h1>Mon Profil</h1>
+<form method="post">
+ 
+    <div class="container  ">   
+
+       <h1>Mon Profil</h1>
 
    {{ parent() }}
-    {{form(userForm)}}
+
+        {{form_start(userForm)}}
+        
+                {{ form_row(userForm.Ecolo) }}
+                {{ form_row(userForm.Vegan) }}
+                {{ form_row(userForm.Econome) }}
+                {{ form_row(userForm.Fetard) }}
+                {{ form_row(userForm.Sportif) }}
+                
+    <a role="button" class="btn btn-outline-success" href="{{ path('preference') }}">Valider</a>
+    <a role="button" type="submit" class="btn btn-outline-info" href="{{ path('edit_user') }}">Editer mon profil</a>
+
+            {{form_end(userForm)}}
+
+    </div>
 
 {% endblock %}
