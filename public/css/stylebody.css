@@ -1,9 +1,7 @@
+
 #contenu {
-    background: #0250c5;
-    background: -webkit-linear-gradient(bottom,  #47baf0, #db82b0);
-    background: -o-linear-gradient(bottom,  #47baf0, #db82b0);
-    background: -moz-linear-gradient(bottom, #47baf0, #db82b0);
-    background: linear-gradient(bottom, #47baf0, #db82b0);
+    background-image: url('../img/homme.jpg');
+
     color: white;
 	font-size: 1rem;
     line-height: 2;
@@ -65,7 +63,7 @@ h4{
     border: 1px rgb(243, 226, 189) solid;
     padding-top: 20px;
     margin-left: 80px;
-    box-shadow: -10px -12px 10px  rgb(212, 127, 212);
+    
     background-color: rgb(140, 188, 216);
 }
 
