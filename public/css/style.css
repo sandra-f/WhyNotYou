@@ -1,9 +1,13 @@
 #contenu {
-    background-color: chocolate;
+    background-image:url('../img/porter.jpg');
+    background-size: 100% 100%;;
     color: white;
 	font-size: 1rem;
     line-height: 2;
+    
 }
+
+
 
 #contenu p{
     font-family: 'Poppins', sans-serif;
@@ -11,34 +15,49 @@
 }
 
 #contenu a{
-    color: rgb(14, 80, 97);
-   text-decoration: none;
-   text-align: center;
+    color: rgb(141, 32, 83);
+    text-decoration: none;
+    text-align: center;
     font-size: 100px;
     font-family: 'Great Vibes', cursive;
 }
 
+
 #contenu a:hover{
-    color: rgb(91, 51, 95);
+    color: rgb(82, 16, 65);
+}
+
+#contenu a, .you-h2{
+    font-size: 85px;
+    text-align: center;
+    
 }
 
 .rejoint a{
     font-size: 50px;
     margin-top: 30px;
+    
+}
+
+.rejoint {
+    border: 3px double rgb(82, 16, 65);
 }
 
 
-#contenu a, .you-h1{
-    font-size: 85px;
-    text-align: center;
-}
-.you-h1{
+.you-h2{
     margin-bottom: 30px;
 }
-.you-h1 p{
+.you-h2 p{
     font-family: 'Great Vibes', cursive;
+    color: black;
+    font-size: 5em;
+    font-weight: bold;
 }
 
+.you-h2 h2{
+    color:  rgb(141, 32, 83);
+    text-shadow: 9px 5px 8px rgba(114, 39, 96, 0.2);
+}
 
 
 h1, h2, h3, h4{
@@ -46,29 +65,55 @@ h1, h2, h3, h4{
     font-size:1em;
     text-shadow: 9px 5px 8px rgba(114, 39, 96, 0.2);
 }
+
 h4{
     font-size: 30px;
 }
 
-#temoignage h1{
-    font-size: 30 em;
-    text-decoration:underline 2px rgb(139, 103, 103);
-}
 
 
 #temoignage{
-    width: 90%;
-    border: 1px rgb(243, 226, 189) solid;
+    width: 60%;
+    border: 1px rgb(104, 101, 95) solid;
     padding-top: 20px;
-    margin-left: 80px;
-    box-shadow: -10px -12px 10px  rgb(212, 127, 212);
-    background-color: rgb(140, 188, 216);
+    padding-left: -10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 20px;
+    background-color: rgb(206, 108, 154, 0.5);;
+    
+}
+
+#temoignage h3{
+    font-size: 4em;
+    text-shadow: 9px 5px 8px rgba(114, 39, 96, 0.2);
+    
 }
 
 
 #temoignage p{
-    color: rgb(41, 39, 39);
-    font-size: 0.5em;
+    color: rgb(12, 10, 10);
+    font-size: 0.8em;
+    overflow: hidden;
+    animation-duration: 10s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 50%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+
+#temoignage h4{
+    color: rgb(66, 2, 50);
+    font-size: 2em;
 }
 
 
@@ -87,7 +132,7 @@ h2, h3{
 }
 .left p{
     text-align: left;
-    padding-right: 20px;
+    padding-right: 10px;
 }
 
 
@@ -100,12 +145,12 @@ h2, h3{
     text-align: right;
 }
 .right{
-    padding-left: 30px;
+    padding-left: 20px;
 }
 
 
 .img-left{
-padding-left: 40%;
+padding-left: 20%;
 padding-bottom: 10%;
 
 }
