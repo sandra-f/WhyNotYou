@@ -25,51 +25,23 @@ class UserController extends AbstractController
              return $this->render('/profil/profil.html.twig', ['userForm'=>$form->createView()]);
         }
 
-    
-    // /**
-    //  * @Route("/show/user", name="show_user")
-    //  */
-    //  public function show(Request $request)
-    // {
-      
-    //     $repository = $this->getDoctrine()->getRepository(User::class);
-        
-    //     #Stocker dans $users tous les users
-    //     $users = $repository->findAll();
+ 
+    /**
+     * @Route("/edit/user", name="edit_user")
+     */
+    public function edit(Request $request, User $user)
+    {
+        $form = $this->createForm(UserType::class, $user);
 
-    // # return $this->render('chemin.html.twig',['users'=>$users]);
+        $form->handleRequest($request);
 
-    // }
-   
+        if ($form->isSubmitted() && $form->isValid()) {
+            //UPDATE query en bdd
+            $this->getDoctrine()->getManager()->flush();
+        }
 
-    // /**
-    //  * @Route("/edit/user", name="edit_user")
-    //  */
-    // public function edit(Request $request, User $user)
-    // {
-    //     $form = $this->createForm(UserType::class, $user);
+        return $this->render('/profil/profil.html.twig', ['editForm'=>$form->createView()]);
+    }
 
-    //     $form->handleRequest($request);
-
-    //     if ($form->isSubmitted() && $form->isValid()) {
-    //         //UPDATE query en bdd
-    //         $this->getDoctrine()->getManager()->flush();
-    //     }
-
-    //     #return $this->render('chemin.html.twig', ['editForm'=>$form->createView()]);
-    // }
-
-    // /**
-    //  * @Route("/delete/user", name="delete_user")
-    //  */
-    // public function delete(User $user)
-    // {
-    //     $em = $this->getDoctrine()->getManager();
-    //     $em->remove($user);
-    //     $em->flush();
-
-    //     #Redirection vers la home page
-    //    # return $this->redirectToRoute('home');
-    // }
 
 }
