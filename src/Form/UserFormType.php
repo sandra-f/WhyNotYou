@@ -21,7 +21,7 @@ class UserFormType extends AbstractType
         ->add('Ecolo', ChoiceType::class, [
             'choices' => ['Ecolo' => true,' que la planète brûle' => false,],
             'expanded'=>true,
-            'label' => 'tu es plutot',
+            'label' => 'Tu es plutôt',
         ])
 
         ->add('Vegan', ChoiceType::class, [
@@ -39,12 +39,15 @@ class UserFormType extends AbstractType
         ->add('Fetard', ChoiceType::class, [
             'choices' => ['au chaud sous la couette' => true,'à chauffer la piste' => false,],
             'expanded'=>true,
-            'label' => 'tes soirées sont plutôt ',
+            'label' => 'Tes soirées sont plutôt ',
         ])
-
+        ->add('Sportif', ChoiceType::class, [
+            'choices' => ['oui' => true,'non' => false,],
+            'expanded'=>true,
+            'label' => 'Sportif(ve) ',
+        ])
        
-        ->add('Valider mon profil', SubmitType::class, ['attr' => ['class' => 'save'],
-        ]);
+        ;
     }
 
 
