@@ -1,17 +1,21 @@
 #contenu {
-    background: rgb(165, 82, 82);
+    background: #0250c5;
+    background: -webkit-linear-gradient(bottom,  #47baf0, #db82b0);
+    background: -o-linear-gradient(bottom,  #47baf0, #db82b0);
+    background: -moz-linear-gradient(bottom, #47baf0, #db82b0);
+    background: linear-gradient(bottom, #47baf0, #db82b0);
     color: white;
 	font-size: 1rem;
     line-height: 2;
 }
 
 #contenu p{
-    font-family: 'Caveat', cursive;
-    font-size: 40px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
 }
 
 #contenu a{
-    color: rgb(46, 15, 15);
+    color: rgb(14, 80, 97);
    text-decoration: none;
    text-align: center;
     font-size: 100px;
@@ -19,11 +23,11 @@
 }
 
 #contenu a:hover{
-    color: rgb(218, 206, 160);
+    color: rgb(91, 51, 95);
 }
 
 .rejoint a{
-    font-size: 70px;
+    font-size: 50px;
     margin-top: 30px;
 }
 
@@ -43,31 +47,32 @@
 
 h1, h2, h3, h4{
     font-family: 'Great Vibes', cursive;
-    font-size:100px;
-    text-shadow: 9px 5px 8px rgba(223, 188, 215, 0.2);
+    font-size:1em;
+    text-shadow: 9px 5px 8px rgba(114, 39, 96, 0.2);
 }
 h4{
     font-size: 30px;
 }
 
 #temoignage h1{
-    font-size: 200px;
+    font-size: 30 em;
     text-decoration:underline 2px rgb(139, 103, 103);
 }
 
 
 #temoignage{
+    width: 90%;
     border: 1px rgb(243, 226, 189) solid;
     padding-top: 20px;
-    padding-left: -40px;
-    box-shadow: -10px -12px 10px  rgb(243, 226, 189);
-    background-color: rgb(54, 24, 24);
+    margin-left: 80px;
+    box-shadow: -10px -12px 10px  rgb(212, 127, 212);
+    background-color: rgb(140, 188, 216);
 }
 
 
 #temoignage p{
-    color: rgb(218, 206, 160);
-    font-size: 25px;
+    color: rgb(41, 39, 39);
+    font-size: 0.5em;
 }
 
 
@@ -120,8 +125,3 @@ padding-bottom: 10%;
 .img-right img{
     border-radius: 50%;
 }
-
-span{
-    color: rgb(245, 130, 88);
-}
-
