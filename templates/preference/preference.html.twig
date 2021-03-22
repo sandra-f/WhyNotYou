@@ -5,8 +5,14 @@
 {% block body %}
 
     <h1>Mes préférences</h1>
+            {{form_start(preferenceForm)}}
+        
+                {{ form_row(preferenceForm.Hobbies) }}
+                
+                {{ form_row(preferenceForm.Valeurs) }}    
 
-   {{ parent() }}
-    {{form(preferenceForm)}}
+            {{form_end(preferenceForm)}}
 
+
+{% block javascripts %}<script src="js/script.js"></script>{% endblock %}
 {% endblock %}
