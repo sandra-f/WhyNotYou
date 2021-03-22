@@ -5,13 +5,9 @@ namespace App\Form;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use App\Entity\User;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class UserFormType extends AbstractType
 {
@@ -19,34 +15,36 @@ class UserFormType extends AbstractType
     {
         $builder      
         ->add('Ecolo', ChoiceType::class, [
-            'choices' => ['Ecolo' => true,' que la planète brûle' => false,],
+            'choices' => ['Ecolo' => true,'Pour que la planète brûle' => false,],
             'expanded'=>true,
-            'label' => 'Tu es plutôt',
+            'label' => '1. Tu es plutôt'
+    
         ])
 
         ->add('Vegan', ChoiceType::class, [
-            'choices' => ['Oui' => true,'Non' => false,],
+            'choices' => ['Vegan' => true,'Hmm... Charaaal!' => false,],
             'expanded'=>true,
-            'label' => 'Vegan',
+            'label' => '2.'
         ])
      
         ->add('Econome', ChoiceType::class, [
-            'choices' => ['oui' => true,'non' => false,],
+            'choices' => ['Econome' => true,'Panier percé' => false,],
             'expanded'=>true,
-            'label' => 'Dépensier(ère) ',
+            'label' => '3.'
+        ])
+
+        ->add('Sportif', ChoiceType::class, [
+            'choices' => ['Sportif' => true,'En jogging devant la télé' => false,],
+            'expanded'=>true,
+            'label' => '4.'
         ])
 
         ->add('Fetard', ChoiceType::class, [
-            'choices' => ['au chaud sous la couette' => true,'à chauffer la piste' => false,],
+            'choices' => ['A chauffer la piste' => true,'Au chaud sous la couette' => false,],
             'expanded'=>true,
-            'label' => 'Tes soirées sont plutôt ',
+            'label' => '5. Tes soirées se passent plutôt'
         ])
-        ->add('Sportif', ChoiceType::class, [
-            'choices' => ['oui' => true,'non' => false,],
-            'expanded'=>true,
-            'label' => 'Sportif(ve) ',
-        ])
-       
+        ->add('Editer', SubmitType::class, ['attr' => ['class' => 'btn btn-outline-success']])
         ;
     }
 
