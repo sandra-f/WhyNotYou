@@ -24,6 +24,8 @@ class PreferenceFormType extends AbstractType
 #dans la liste total des i, pré selectionner la catégorie cat =>1
             },
             'choice_label' => 'name',
+            'multiple' => true,
+            'expanded' => true,
         ])
         
        ->add('Valeurs', EntityType::class, [
@@ -34,6 +36,8 @@ class PreferenceFormType extends AbstractType
                     ->setParameter('cat', 2);
             },
             'choice_label' => 'name',
+            'multiple' => true,
+            'expanded' => true,
 
             ])
         ->add('Valider', SubmitType::class, ['attr' => ['class' => 'save'],])

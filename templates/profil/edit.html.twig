@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
     
-{% block title %}User profil{% endblock %}
+{% block title %}Mon profil{% endblock %}
 
     {% block head %}
         {{parent()}}
@@ -17,23 +17,21 @@
 
 <form method="post">
  
-    <div class="container  ">   
+    <div class="container">   
 
        <h1>Mon Profil</h1>
 
-   {{ parent() }}
 
-            {{form_start(userForm)}}
+        {{form_start(editForm)}}
         
-                {{ form_row(userForm.Ecolo) }}
-                {{ form_row(userForm.Vegan) }}
-                {{ form_row(userForm.Econome) }}
-                {{ form_row(userForm.Fetard) }}
-                {{ form_row(userForm.Sportif) }}
-                
-    <a role="button" class="btn btn-outline-success" href="{{ path('preference') }}">Valider</a>
+                {{ form_row(editForm.Ecolo) }}
+                {{ form_row(editForm.Vegan) }}
+                {{ form_row(editForm.Econome) }}
+                {{ form_row(editForm.Sportif) }}
+                {{ form_row(editForm.Fetard) }}
+    
 
-            {{form_end(userForm)}}
+            {{form_end(editForm)}}
 
     </div>
 
