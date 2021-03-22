@@ -16,7 +16,7 @@
 <main id="contenu">
     <section id="intro" class="bg py-5">
             <div class="container mb-3">
-                <h1 class="text-white text-center my-5"><a href="">Rejoignez la communeautée !</a></h1>
+                <h1 class="text-white text-center my-5"><a href="{{ path("register") }}">Rejoignez la communautée !</a></h1>
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -29,10 +29,10 @@
 
                         </div>
                         <div class="carousel-item">
-                            {{ asset('uploads/img/{{rose.jpg}}') }}
+                            {{ asset('img/{{rose.jpg}}') }}
                         </div>
                         <div class="carousel-item ">
-                            {{ asset('uploads/img/{{rose.jpg}}') }}
+                            {{ asset('img/{{rose.jpg}}') }}
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -48,13 +48,13 @@
         </section>
             
                 <div class="you-h2">
-                    <h2>Why not <span><a href=""> you?</a></span></h2>
+                    <h2>Why not <span><a href="{{ path("login") }}"> you?</a></span></h2>
 
                     <p>Et si un simple matching pouvais vous sortir de la solitude,<br> Une nouvelle amitiée, un
                         compagnon de randonné ou alors un coup d'un soir ...<br> tout devient possible avec why not you!
                     </p>
 
-                    <a class="rejoint" href="">N'attends plus, match avec la communeautée!</a>
+                    <a class="rejoint" href="{{ path("register") }}">N'attends plus, match avec la communautée!</a>
                 </div>
 
 
@@ -82,7 +82,7 @@
                         <div class="col-lg-8 p-5">
                             <div class="right">
                                 <h4>Jaafar 58ans</h4>
-                                <p>Alors, Blobloblo, dans la ligne 47 vous pouvez voir que the lettre in english is not food! Thank's see you leter
+                                <p>Jamais j'eurai pue penser que ma voisine qui ma rendait fou  avec ces traveaux aller etre mon match!
                                 </p>
                                 <p>Il y a 1 mois</small></p>
                             </div>
