@@ -38,8 +38,9 @@ class PreferenceFormType extends AbstractType
             'choice_label' => 'name',
             'multiple' => true,
             'expanded' => true,
-
+            'choice_attr' => function() { return array ('class' => 'single-checkbox');}, 
             ])
+
         ->add('Valider', SubmitType::class, ['attr' => ['class' => 'save'],])
             ;
     }
