@@ -46,7 +46,7 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="date")
      */
-    private $birth_date;
+    private $birthDate;
 
     /**
      * @ORM\ManyToMany(targetEntity=Item::class, inversedBy="users")
@@ -185,12 +185,12 @@ class User implements UserInterface
 
     public function getBirthDate(): ?\DateTimeInterface
     {
-        return $this->birth_date;
+        return $this->birthDate;
     }
 
-    public function setBirthDate(\DateTimeInterface $birth_date): self
+    public function setBirthDate(\DateTimeInterface $birthDate): self
     {
-        $this->birth_date = $birth_date;
+        $this->birthDate = $birthDate;
 
         return $this;
     }
