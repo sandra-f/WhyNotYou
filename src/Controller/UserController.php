@@ -8,30 +8,14 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\User;
 use App\Form\UserFormType;
 
-
-
 class UserController extends AbstractController
-{
-
-        /**
-         * @Route("/profil",name="profil")
-         */
-        public function new(Request $request)
-        {
-            
-            $form = $this->createForm(UserFormType::class);
-            $form->handleRequest($request);
-               
-             return $this->render('/profil/profil.html.twig', ['userForm'=>$form->createView()]);
-        }
-
- 
+{ 
     /**
-     * @Route("/edit/user", name="edit_user")
+     * @Route("/user/edit/{id<\d+>}", name="edit_user")
      */
     public function edit(Request $request, User $user)
     {
-        $form = $this->createForm(UserType::class, $user);
+        $form = $this->createForm(UserFormType::class, $user);
 
         $form->handleRequest($request);
 
@@ -40,7 +24,7 @@ class UserController extends AbstractController
             $this->getDoctrine()->getManager()->flush();
         }
 
-        return $this->render('/profil/profil.html.twig', ['editForm'=>$form->createView()]);
+        return $this->render('/profil/edit.html.twig', ['editForm'=>$form->createView()]);
     }
 
 
