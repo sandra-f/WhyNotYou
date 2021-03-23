@@ -16,23 +16,23 @@
 <main id="contenu">
     <section id="intro" class="bg py-5">
             <div class="container mb-3">
-                <h1 class="text-white text-center my-5"><a href="{{ path("register") }}">Rejoignez la communautée !</a></h1>
+                <h1 class="text-white text-center my-5"><a href="{{ path("app_register") }}">Rejoignez la communautée !</a></h1>
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                     </ol>
-                    <div class="carousel-inner active">
-                        <div class="carousel-item" >
-                            {{ asset('img/rose.png') }}
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" >
+                            <img src="{{ asset('img/1.jpg') }}" alt="...">
 
                         </div>
                         <div class="carousel-item">
-                            {{ asset('img/{{rose.jpg}}') }}
+                            <img src="{{ asset('img/rose.jpg') }}" alt="...">
                         </div>
                         <div class="carousel-item ">
-                            {{ asset('img/{{rose.jpg}}') }}
+                            <img src="{{ asset('img/rose.jpg') }}" alt="...">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -45,20 +45,19 @@
                     </a>
                 </div>
             </div>
-        </section>
+    </section>
             
                 <div class="you-h2">
-                    <h2>Why not <span><a href="{{ path("login") }}"> you?</a></span></h2>
+                    <h2>Why not <span><a href="{{ path("app_login") }}"> you?</a></span></h2>
 
                     <p>Et si un simple matching pouvais vous sortir de la solitude,<br> Une nouvelle amitiée, un
                         compagnon de randonné ou alors un coup d'un soir ...<br> tout devient possible avec why not you!
                     </p>
 
-                    <a class="rejoint" href="{{ path("register") }}">N'attends plus, match avec la communautée!</a>
+                    <a class="rejoint" href="{{ path("app_register") }}">N'attends plus, match avec la communautée!</a>
                 </div>
 
 
-        </section>
         <div class="container">
             <section id="temoignage">
                 <h3>Témoignage</h3>
@@ -99,7 +98,7 @@
                                 <img src="img/2.jpg">
                             </div>
                         </div>
-                            <div class="col-lg-8 p-5">
+                        <div class="col-lg-8 p-5">
                             <div class="left">
                                 <h4>Sonia 25ans</h4>
                                 <p>Le wordpress, c'est vraiment un metier hein, creation de theme ect... franchement on y vit facilement avec.
@@ -107,20 +106,14 @@
                                 <p>Il y a 1 mois</small></p>
                             </div>
                         </div>
-                        </div>
                     </div>
                 </div>
             </section>
         </div>
         
-    </div>
-    </main>
-    {%block footer%}
-    {{parent()}}
-    {%endblock%}
-</body>
+</main>
 
-</div>
+</body>
 {%endblock%}
 
 
