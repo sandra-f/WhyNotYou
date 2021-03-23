@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\User;
 use App\Form\UserFormType;
+use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\Response;
 
 class UserController extends AbstractController
@@ -34,15 +35,29 @@ class UserController extends AbstractController
         /**
          * @Route("/user/{id<\d+>}", name="show_user")
         */
-        public function show(int $id):Response
+        public function show(UserRepository $repo, int $id):Response
 
         {        
                      
             $repository = $this->getDoctrine()->getRepository(User::class);
-            $user = $repository->find($id);
 
-        return $this->render('user/userinterface.html.twig', ['utilisateur'=>$user]);
+            $user = $repository->find($id);
+            $match = $repo->findMatching($id);
+
+        return $this->render('user/userinterface.html.twig', ['utilisateur'=>$user, 'match'=>$match]);
         }
+        
+
+        // /**
+        //  * @Route("/user/match/{id<\d+>}}", name="show_match")
+        // */
+        // public function findMatching(UserRepository $repo, int $id)
+
+        // {        
+           
+            
+        // return $this->render('user/userinterface.html.twig', ['match'=>$match]);
+        // }
     
 
 

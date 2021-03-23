@@ -53,13 +53,26 @@
    {{item.name}}
    </li>
    {%endfor%}
+   </ul>
+ <a role="button" class="btn btn-outline-info" href="{{ path('preference',{ id: utilisateur.id}) }}">Editer mes préférences</a>
+<hr/>
 
+<h2> Mes matchs</h2>
 
+   <ul>
+   {%for user in match%}
+   <li>
+   {{user.pseudo}}
+   </li>
+   {%endfor%}
+   </ul>
+
+<button type="submit" class="btn btn-outline-success" href="{{ path('show_user',{ id: utilisateur.id}) }}">Voir mes matchs</button>
         
   
                 
-    <a role="button" class="btn btn-outline-info" href="{{ path('preference',{ id: utilisateur.id}) }}">Editer mes préférences</a>
-    <button type="submit" class="btn btn-outline-success" >Voir mes matchs</button>
+   
+    
 
 
     {% endblock %}

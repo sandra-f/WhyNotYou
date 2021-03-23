@@ -36,22 +36,35 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         $this->_em->flush();
     }
 
-    // /**
-    //  * @return User[] Returns an array of User objects
-    //  */
-    /*
-    public function findByExampleField($value)
+     /**
+     * @return User[] Returns an array of User objects
+     */
+    
+    public function findMatching(int $id)
     {
-        return $this->createQueryBuilder('u')
-            ->andWhere('u.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('u.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = 'INSERT IGNORE INTO matching (user_source, user_target) SELECT DISTINCT
+                :id AS user_source,
+                u.id AS user_target
+                FROM users_items ui
+                INNER JOIN user u ON u.id = ui.user_id
+                WHERE user_id <> :id
+                AND item_id IN (SELECT item_id FROM users_items WHERE user_id= :id)';
+
+
+        $stmt = $conn->prepare($sql);
+        $stmt->execute(array('id' => $id));
+
+        $sql = 'SELECT * FROM matching m INNER JOIN user u ON u.id = m.user_target
+        WHERE m.user_source = :id';
+
+        $stmt = $conn->prepare($sql);
+        $stmt->execute(array('id' => $id));
+
+        return $stmt->fetchAllAssociative();
     }
-    */
+    
 
     /*
     public function findOneBySomeField($value): ?User
