@@ -1,27 +1,52 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheet %}
-<link rel="stylesheet" href="{{ asset('css/register.css') }}" media="all">
+{{parent()}}
+
 {% endblock %}
 
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    {% for flashError in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-    {% endfor %}
+<div style="background-image: url('img/ciel1.jpg')">
 
-    <h1>Créer un compte</h1>
-
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.pseudo) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.birth_date) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Mot de passe'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-
-        <button type="submit" class="btn">Enregistrer</button>
+     <div class="container" style="background-color:#fc9dd78f; width:40% "> 
+        {% for flashError in app.flashes('verify_email_error') %}
+            <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+        {% endfor %}
+            <div style="border-radius:30%; margin-left:32%">
+                <h1 style="color:#666666; padding-bottom:30px; font-family:Great Vibes; font-weight:bold; text-align:left;font-size:38px; padding-top:40px;">Créer un compte</h1>
+            
+                <div style="align-items:center; padding-bottom:26%;">
+                    {{ form_start(registrationForm) }}
+                    <div class="row">
+                        <div  style="align-ithem: center; " >
+                            <div class="col">
+                                <div style="color:#666666; padding-bottom:10px">{{ form_row(registrationForm.pseudo) }}</div>
+                            </div>
+                            <div class="col">
+                                <div style="color:#666666; padding-bottom:10px">{{ form_row(registrationForm.email) }}</div>
+                            </div>
+                            <div class="col">
+                                <div style="color:#666666; padding-bottom:15px" >{{ form_row(registrationForm.birth_date) }}</div>
+                            </div>
+                            <div class="col" >
+                               <div style="color:#666666 ;padding-bottom:15px"> {{ form_row(registrationForm.plainPassword, {
+                                label: 'Mot de passe'
+                            }) }}</div>
+                            </div>
+                            <div class="col">
+                                <div style="color:#666666 ; padding-bottom:15px">{{ form_row(registrationForm.agreeTerms) }}</div>
+                            </div>  
+                            <div class="col">
+                                <button type="submit" class="btn" style="color:#666666; padding-bottom:15px">>Enregistrer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+  
     {{ form_end(registrationForm) }}
+</div>
 {% endblock %}
