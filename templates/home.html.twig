@@ -1,18 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{%block head%}
-
-    <title>{% block title %}Why not you - Matchmaking high level{% endblock %}</title>
+    {% block title %}Why not you - Matchmaking high level{% endblock %}
     {% block stylesheets %}
         {{parent()}}
         <link rel="stylesheet" href="{{ asset('css/home.css') }}" media="all">
         <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="css/main.css">  
-        {% endblock %}
-{% endblock %}
-{% block body %}
-    
+    {% endblock %}
 
+    
+{% block body %}
 <main id="contenu">
     <div id="titre-h1">
         <h1 class="text-center my-5"><a href="{{ path("app_register") }}">Rejoignez la communautée !</a></h1>
@@ -120,9 +116,8 @@
         </div>
         
 </main>
+{% endblock %}
 
-</body>
-{%endblock%}
 
 
 
