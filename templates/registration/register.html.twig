@@ -8,8 +8,8 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-<div style="background-image: url('img/ciel1.jpg')">
 
+<div style="background-image: url('img/ciel1.jpg')">
      <div class="container" style="background-color:#fc9dd78f; width:40% "> 
         {% for flashError in app.flashes('verify_email_error') %}
             <div class="alert alert-danger" role="alert">{{ flashError }}</div>
@@ -45,8 +45,8 @@
                     </div>
                 </div>
             </div>
+    
+  {{ form_end(registrationForm) }}
     </div>
-  
-    {{ form_end(registrationForm) }}
 </div>
 {% endblock %}
