@@ -1,79 +1,65 @@
 {% extends 'base.html.twig' %}
     
-{% block title %}User interface{% endblock %}
-
-    {% block head %}
-        {{parent()}}
-  
-    {% endblock %}
+{% block title %}Espace utilisateur{% endblock %}
 
 
     {% block body %}
-        {{ parent() }}
 
     <h1>Espace utilisateur</h1>
 
      
     <br/>
+    <h2> Mon profil</h2>
+    <ul>
 
-<li>{{ utilisateur.pseudo | upper }}</li>
+<li>Nom : {{ utilisateur.pseudo | upper }}</li>
+
+<li>Âge : {{ utilisateur.getAge() }} ans</li>
+
 
 {% if utilisateur.ecolo == 1  %}
    
-   <li>Non au plastique,carton,verre ... </li>
-{% endif %}
-
-{% if utilisateur.ecolo == 0  %}
-   
-   <li>ah non, Brûle planete, Brûle !!! </li>
+   <li>Ecolo</li>
 {% endif %}
 
 {% if utilisateur.vegan == 1  %}
    
-   <li>je suis Green, Vegan</li>
-{% endif %}
-
-{% if utilisateur.vegan == 0  %}
-   
-   <li>Hmm... Charaaal!</li>
+   <li>Vegan</li>
 {% endif %}
 
 {% if utilisateur.sportif == 1  %}
    
-   <li>Sport is my life, #healthy</li>
-{% endif %}
-
-{% if utilisateur.sportif == 0  %}
-   
-   <li>En jogging devant la télé</li>
+   <li>Sportif</li>
 {% endif %}
         
 {% if utilisateur.econome == 1  %}
    
-   <li>Je suis économe</li>
+   <li>Econome</li>
 {% endif %}
-     
-     
-{% if utilisateur.sportif == 0  %}
    
-   <li>Panier percé</li>
+{% if utilisateur.fetard == 1  %}
+
+      <li>Fétard</li>
 {% endif %}
+</ul>
+    <a role="button" class="btn btn-outline-info" href="{{ path('edit_user',{ id: utilisateur.id}) }}">Editer mon profil</a>
+<hr/>
 
+<h2> Mes préfèrences</h2>
 
-        
-      
-        <li>{{ utilisateur.fetard }}</li>
-        <hr/>
-
+   <ul>
+   {%for item in utilisateur.items%}
+   <li>
+   {{item.name}}
+   </li>
+   {%endfor%}
 
 
         
   
                 
-    <button type="submit" class="btn btn-outline-success" >Créer</button>
-    <a role="button" class="btn btn-outline-info" href="{{ path('edit_user',{ id: utilisateur.id}) }}">Editer mon profil</a>
     <a role="button" class="btn btn-outline-info" href="{{ path('preference',{ id: utilisateur.id}) }}">Editer mes préférences</a>
-    <button type="submit" class="btn btn-outline-success" >Voir mes match</button>
+    <button type="submit" class="btn btn-outline-success" >Voir mes matchs</button>
 
 
     {% endblock %}

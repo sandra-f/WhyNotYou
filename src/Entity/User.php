@@ -188,6 +188,13 @@ class User implements UserInterface
         return $this->birthDate;
     }
 
+    public function getAge()
+    {
+        $dateInterval = $this->birthDate->diff(new \DateTime());
+ 
+        return $dateInterval->y;
+    }
+
     public function setBirthDate(\DateTimeInterface $birthDate): self
     {
         $this->birthDate = $birthDate;
