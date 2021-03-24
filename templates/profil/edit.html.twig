@@ -1,30 +1,39 @@
 {% extends 'base.html.twig' %}
-    
+
+
+
 {% block title %}Mon profil{% endblock %}
 
 
 {% block body %}
-
-<form method="post">
- 
-    <div class="container">   
-
-       <h1>Mon Profil</h1>
+<div style="background-image: url('../../img/ciel1.jpg')">
 
 
-        {{form_start(editForm)}}
+    <div class="container">
+        <div style="background-color:#fc9dd78f; padding-bottom:2%; width:50%; margin-left:25% ">
+
+        <form method="post">
         
-                {{ form_row(editForm.Ecolo) }}
-                {{ form_row(editForm.Vegan) }}
-                {{ form_row(editForm.Econome) }}
-                {{ form_row(editForm.Sportif) }}
-                {{ form_row(editForm.Fetard) }}
-    
+            <div style="border-radius:30%; margin-left:32%">
+                
+                <div style="color:#666666; padding-bottom:30px; font-family:Great Vibes; font-weight:bold; text-align:left; font-size:38px; padding-top:40px;"><h1>Mon Profil</h1></div>
 
-            {{form_end(editForm)}}
-
+                    <div style="align-ithem: center; padding-bottom:30px">
+                        {{form_start(editForm)}}
+                        
+                            <div style="padding-bottom:8px">{{ form_row(editForm.Ecolo) }}</div>
+                            <div style="padding-bottom:8px">{{ form_row(editForm.Vegan) }}</div>
+                            <div style="padding-bottom:8px">{{ form_row(editForm.Econome) }}</div>
+                            <div style="padding-bottom:8px">{{ form_row(editForm.Sportif) }}</div>
+                            <div style="padding-bottom:8px">{{ form_row(editForm.Fetard) }}</div>
+                
+                        
+                        <div style="padding-left:18%; padding-top:4%">{{form_end(editForm)}}</div>
+                    </div>
+                </div>
+            </div>
     </div>
-
+</div>
 {% endblock %}
 
 
