@@ -380,7 +380,7 @@ iframe {
 }
 
 .input-checkbox100:checked + .label-checkbox100::before {
-  color: #d33f8d;
+  color: #ce3fd3;
 }
 
 
