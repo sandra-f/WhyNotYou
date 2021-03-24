@@ -25,7 +25,9 @@ class PreferenceFormType extends AbstractType
             'choice_label' => 'name',
             'multiple' => true,    
             
-        ]);
+        ])
+        ->add('Valider', SubmitType::class, ['attr' => ['class' => 'btn btn-outline-success'],])
+        ;
     
        
     }
