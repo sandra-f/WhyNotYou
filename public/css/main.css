@@ -559,3 +559,7 @@ iframe {
     padding-right: 15px;
   }
 }
+
+select#preference_form_items {
+  height: 500px !important;
+}
