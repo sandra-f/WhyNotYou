@@ -64,6 +64,34 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
 
         return $stmt->fetchAllAssociative();
     }
+
+    public function findMatchItems(int $id) 
+    {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = 'SELECT ui.*, i.* FROM matching m INNER JOIN users_items ui
+        ON ui.user_id = m.user_target
+        INNER JOIN item i ON i.id = ui.item_id
+        WHERE m.user_source = :id
+        AND item_id IN (SELECT item_id FROM `users_items` WHERE user_id = :id)';
+
+        $stmt = $conn->prepare($sql);
+        $stmt->execute(array('id' => $id));
+
+        return $stmt->fetchAllAssociative();
+    }
+
+    public function countUserItems (int $id)
+    {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = 'SELECT COUNT(item_id) AS nb FROM users_items WHERE user_id = :id';
+
+        $stmt = $conn->prepare($sql);
+        $stmt->execute(array('id' => $id));
+
+        return $stmt->fetchAssociative();
+    }
     
 
     /*
