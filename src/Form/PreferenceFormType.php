@@ -18,7 +18,38 @@ class PreferenceFormType extends AbstractType
         $builder
         ->add('items', EntityType::class, [
             'class' => Item::class,
+            'label' => 'Veuillez choisir vos préférences dans la liste ci dessous:',
+
+            'group_by' => function (Item $item) {
+                return $item->getCategory()->getName();
+            },
+            'choice_label' => 'name',
+            'multiple' => true,    
             
+        ])
+        ->add('Valider', SubmitType::class, ['attr' => ['class' => 'btn btn-outline-success'],])
+        ;
+    
+       
+    }
+
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults([
+            'data_class' => User::class,
+        ]);
+    }
+
+  
+
+
+
+
+
+
+
+
+//     Right after 'class'=>Item....
 //             'query_builder' => function (EntityRepository $er) {
 //                 return $er->createQueryBuilder('i') 
 //                     ->where('i.category =:cat')
@@ -26,14 +57,8 @@ class PreferenceFormType extends AbstractType
 // #return le repo filtrer, par le Query Builder, 
 // #dans la liste total des i, pré selectionner la catégorie cat =>1
 //             },
-            'group_by' => function (Item $item) {
-                return $item->getCategory()->getName();
-            },
-            'choice_label' => 'name',
-            'multiple' => true,
-            
-        ])
-        
+
+
     //    ->add('items', EntityType::class, [
     //         'class' => Item::class,
     //         'label' => 'valeurs',
@@ -48,16 +73,8 @@ class PreferenceFormType extends AbstractType
     //         'choice_attr' => function() { return array ('class' => 'single-checkbox');}, 
     //         ])
 
-        ->add('Valider', SubmitType::class, ['attr' => ['class' => 'save'],])
-            ;
-    }
 
-    public function configureOptions(OptionsResolver $resolver)
-    {
-        $resolver->setDefaults([
-            'data_class' => User::class,
-        ]);
-    }
 
+    
 
 }
