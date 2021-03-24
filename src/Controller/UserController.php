@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\User;
+use App\Form\PreferenceFormType;
 use App\Form\UserFormType;
 use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,7 +14,7 @@ use Symfony\Component\HttpFoundation\Response;
 class UserController extends AbstractController
 {
  
-    /**
+         /**
          * @Route("/user/edit/{id<\d+>}", name="edit_user")
          */
         public function edit(Request $request, User $user)
@@ -35,7 +36,7 @@ class UserController extends AbstractController
         /**
          * @Route("/user/{id<\d+>}", name="show_user")
         */
-        public function show(UserRepository $repo, int $id):Response
+        public function show(UserRepository $repo, int $id, Request $request):Response
 
         {        
                      
@@ -44,7 +45,25 @@ class UserController extends AbstractController
             $user = $repository->find($id);
             $match = $repo->findMatching($id);
 
-        return $this->render('user/userinterface.html.twig', ['utilisateur'=>$user, 'match'=>$match]);
+            $repository = $this->getDoctrine()->getRepository(User::class);
+            $user = $repository->find($id);
+
+        $form = $this->createForm(PreferenceFormType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            // $table = array_merge($form['hobbies'],$form['valeurs']);
+            // foreach ($table as $element) {
+            //         $user->addItem($element);  
+            // } 
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($user);
+            $entityManager->flush();
+        }
+
+        return $this->render('user/userinterface.html.twig', ['utilisateur'=>$user, 'match'=>$match, 
+                    'preferenceForm'=>$form->createView()]);
         }
         
 

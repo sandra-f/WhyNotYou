@@ -56,7 +56,31 @@
                {%endfor%}
             </ul>  
             <div class="card-body">
-               <a role="button" class="btn btn-outline-info" href="{{ path('preference',{ id: utilisateur.id}) }}">Editer mes préférences</a>
+               <!-- Button -->
+<button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#popup">
+    Choisir mes préférences
+</button>
+
+<!-- Pop-up -->
+<div id="popup" class="modal">
+       <div class="modal-dialog" style="max-height: 250px">
+                <div class="modal-content">
+                 <div class="modal-header">
+                      <p> Veuillez choisir vos préférences dans la liste ci dessous </p>
+                       </div>
+                 <div class="modal-body">
+                      {{form_start(preferenceForm)}}
+                        {{ form_row(preferenceForm.items) }}
+                       {{form_end(preferenceForm)}}
+                       </div>
+
+                 <div class="modal-footer">
+                    <button type="submit" name="submitForm" class="btn btn-outline-success" data-dismiss="modal"> c'est bon !!  </button>
+                       </div>
+                </div>
+       </div>
+</div>
+</a>
             </div>
          </div>
       </div>
