@@ -26,6 +26,8 @@ class UserController extends AbstractController
             if ($form->isSubmitted() && $form->isValid()) {
                 //UPDATE query en bdd
                 $this->getDoctrine()->getManager()->flush();
+                
+                $this->addFlash('success','Bravo, ton profil est mis à jour');
             }
 
             return $this->render('/profil/edit.html.twig', ['editForm'=>$form->createView()]);
@@ -48,6 +50,7 @@ class UserController extends AbstractController
             $form = $this->createForm(PreferenceFormType::class, $user);
             $form->handleRequest($request);
 
+    
         if ($form->isSubmitted() && $form->isValid()) {
             // $table = array_merge($form['hobbies'],$form['valeurs']);
             // foreach ($table as $element) {
