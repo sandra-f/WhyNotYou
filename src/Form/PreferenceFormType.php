@@ -18,6 +18,7 @@ class PreferenceFormType extends AbstractType
         $builder
         ->add('items', EntityType::class, [
             'class' => Item::class,
+            'label' => 'Veuillez choisir vos préférences dans la liste ci dessous:',
 
             'group_by' => function (Item $item) {
                 return $item->getCategory()->getName();
