@@ -37,6 +37,7 @@ class PreferenceFormType extends AbstractType
         ]);
     }
 
+  
 
 
 
@@ -69,5 +70,8 @@ class PreferenceFormType extends AbstractType
     //         'choice_attr' => function() { return array ('class' => 'single-checkbox');}, 
     //         ])
 
+
+
+    
 
 }
