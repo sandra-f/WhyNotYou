@@ -45,11 +45,8 @@ class UserController extends AbstractController
             $user = $repository->find($id);
             $match = $repo->findMatching($id);
 
-            $repository = $this->getDoctrine()->getRepository(User::class);
-            $user = $repository->find($id);
-
-        $form = $this->createForm(PreferenceFormType::class, $user);
-        $form->handleRequest($request);
+            $form = $this->createForm(PreferenceFormType::class, $user);
+            $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             // $table = array_merge($form['hobbies'],$form['valeurs']);
