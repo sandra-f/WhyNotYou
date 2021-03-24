@@ -1,7 +1,6 @@
 footer{
     
     background-color: rgba(248, 194, 223, 0.502);
-    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -15,5 +14,19 @@ footer{
     color: rgb(66, 2, 50);
 }
 #footer a:hover{
+    color: #ce79f0;
+}
+
+
+header{
+    background-color: rgba(248, 194, 223, 0.502);
+}
+#header p{
+    color: rgb(66, 2, 50);
+}
+#header a{
+    color: rgb(66, 2, 50);
+}
+#header a:hover{
     color: #ce79f0;
 }
