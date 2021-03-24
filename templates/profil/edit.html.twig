@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+    
+{% block title %}Mon profil{% endblock %}
+ 
+{% block body %}
+   {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+        {{message}}
+        </div>
+    {% endfor %}
+
+<form method="post">
+ 
+    <div class="container">   
+
+       <h1>Mon Profil</h1>
+
+        {{form_start(editForm)}}
+        
+                {{ form_row(editForm.Ecolo) }}
+                {{ form_row(editForm.Vegan) }}
+                {{ form_row(editForm.Econome) }}
+                {{ form_row(editForm.Sportif) }}
+                {{ form_row(editForm.Fetard) }}
+
+        {{form_end(editForm)}}
+
+    </div>
+    
+   
+{% endblock %}
+
+
+
