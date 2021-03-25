@@ -1,3 +1,18 @@
+
+header{
+    background-color: rgba(248, 194, 223, 0.502);
+}
+#header p{
+    color: rgb(66, 2, 50);
+}
+#header a{
+    color: rgb(66, 2, 50);
+}
+#header a:hover{
+    color: #ce79f0;
+}
+
+
 #contenu {
     background-image:url('../img/porter.jpg');
     background-size: 100% 100%;;
@@ -41,13 +56,7 @@
 
 #titre-h1{
     padding-top: 1px ;
-    padding-bottom: 15px;
-    font-size: 1.8em;
-}
-
-#intro h1{
-    font-size: 2rem;
-
+    padding-bottom: 13px;
 }
 
 .rejoint a{
@@ -78,10 +87,14 @@
     margin-top: -40px;
 }
 
-
-h1, h2, h3, h4{
+h1{
     font-family: 'Great Vibes', cursive;
-    font-size:1em;
+    text-shadow: 9px 5px 8px rgba(114, 39, 96, 0.2);
+}
+
+h2, h3, h4{
+    font-family: 'Great Vibes', cursive;
+   
     text-shadow: 9px 5px 8px rgba(114, 39, 96, 0.2);
 }
 
@@ -191,3 +204,60 @@ h2, h3{
       width: 100%;
     }
   }
+
+
+.marge h1{
+    padding-top: 40px;
+}
+
+
+.mention p{
+    text-align: left;
+}
+.mention h2{
+    text-align: left;
+    text-decoration: underline 1px;
+    margin-top: 20px;
+}
+
+.rgpd h2, h3{
+    text-align: left;
+    text-decoration: underline 1px;
+    margin-top: 20px;
+}
+
+.rgpd p{
+    text-align: left;
+    margin-top: 20px;
+}
+
+.APropos p{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.APropos h1{
+    padding-top: 40px;
+    padding-bottom: 5px;
+}
+
+footer{
+    
+    background-color: rgba(248, 194, 223, 0.502);
+    position: inherit;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+}
+#footer p{
+    color: rgb(66, 2, 50);
+}
+
+#footer a{
+    color: rgb(66, 2, 50);
+}
+#footer a:hover{
+    color: #ce79f0;
+}
