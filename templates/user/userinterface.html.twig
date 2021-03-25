@@ -59,7 +59,7 @@
                <div class="card-body">
                     <!-- Button -->
                     <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#popup">
-                        Choisir mes préférences
+                        Editer mes préférences
                     </button>
                </div>
                     <!-- Pop-up -->
@@ -91,7 +91,8 @@
                     <h2 class="card-title">Mes matchs</h2>
                 </div>
                 <ul class="list-group list-group-flush">
-                    {%for user in match%}
+                    {%for user in match%}  
+
                     <li class="list-group-item">{{user.pseudo}} 
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" style="width: {{user.pourcentage}}%" aria-valuenow="{{user.pourcentage}}" aria-valuemin="0" aria-valuemax="100">{{user.pourcentage}}%</div>
@@ -117,8 +118,9 @@
                   Hé ! Renseigne tes préférences maintenant et découvre tout de suite qui matche avec toi !
                </div>
                <div class="card-body">
-                  <button type="submit" class="btn btn-outline-success"
-                     href="{{ path('show_user',{ id: utilisateur.id}) }}">Voir mes matchs</button>
+                    <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#popup">
+                        Choisir mes préférences
+                    </button>
                </div>
          </div>
          {%endif%}
