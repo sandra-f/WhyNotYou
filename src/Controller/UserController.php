@@ -25,6 +25,10 @@ class UserController extends AbstractController
             }
 
             $id = $this->getUser()->getId();
+            $repository = $this->getDoctrine()->getRepository(User::class);
+
+            $user = $repository->find($id);
+
             $form = $this->createForm(UserFormType::class, $user);
 
             $form->handleRequest($request);
