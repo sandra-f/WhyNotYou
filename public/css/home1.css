@@ -241,7 +241,7 @@ p, h1, h2, h3{
 footer{
     
     background-color: rgba(248, 194, 223, 0.502);
-    position: inherit;
+    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
