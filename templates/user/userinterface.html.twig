@@ -4,121 +4,132 @@
 {% block title %}Espace utilisateur{% endblock %}
 
 {% block body %}
-    <h1 class="text-center">Mon compte</h1>
+<h1 class="text-center">Mon compte</h1>
 
-<div class="container my-4">
-   <div class="row">
-      <div class="col-lg-3">
-         <div class="card" style="width: 18rem;">
-            <div class="card-body">
-               <h2 class="card-title">Mon profil</h2>
-            </div>
-   
-            <ul class="list-group list-group-flush">
-               <li class="list-group-item">Nom : {{ utilisateur.pseudo | upper }}</li>
-               <li class="list-group-item">Âge : {{ utilisateur.getAge() }} ans</li>
+   <div class="container my-4">
+      <div class="row">
+         <div class="col-lg-3">
+            <div class="card">
+               <div class="card-body">
+                    <h2 class="card-title">Mon profil</h2>
+               </div>
 
-               {% if utilisateur.ecolo == 1  %}
-               <li class="list-group-item">Ecolo</li>
-               {% endif %}
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Nom : {{ utilisateur.getPseudo() | upper }}</li>
+                    <li class="list-group-item">Âge : {{ utilisateur.getAge() }} ans</li>
 
-               {% if utilisateur.vegan == 1  %}
-               <li class="list-group-item">Vegan</li>
-               {% endif %}
+                    {% if utilisateur.ecolo == 1 %}
+                    <li class="list-group-item">Ecolo</li>
+                    {% endif %}
 
-               {% if utilisateur.sportif == 1  %}
-               <li class="list-group-item">Sportif</li>
-               {% endif %}
+                    {% if utilisateur.vegan == 1 %}
+                    <li class="list-group-item">Vegan</li>
+                    {% endif %}
 
-               {% if utilisateur.econome == 1  %}
-               <li class="list-group-item">Econome</li>
-               {% endif %}
+                    {% if utilisateur.sportif == 1 %}
+                    <li class="list-group-item">Sportif</li>
+                    {% endif %}
 
-               {% if utilisateur.fetard == 1  %}
-               <li class="list-group-item">Fêtard</li>
-               {% endif %}
+                    {% if utilisateur.econome == 1 %}
+                    <li class="list-group-item">Econome</li>
+                    {% endif %}
 
-            </ul>
-            <div class="card-body">
-               <a role="button" class="btn btn-outline-info" href="{{ path('edit_user',{ id: utilisateur.id}) }}">Editer mon profil</a>
-            </div>
-         </div>
-      </div>
+                    {% if utilisateur.fetard == 1 %}
+                    <li class="list-group-item">Fêtard</li>
+                    {% endif %}
 
-      <div class="col-lg-6">
-         <div class="card ml-5">
-            <div class="card-body">
-               <h2 class="card-title">Mes préfèrences</h2>
-            </div>
-            <ul class="list-group list-group-flush">
-               {%for item in utilisateur.items%}
-               <li class="list-group-item">{{item.name}}</li>
-               {%endfor%}
-            </ul>  
-            <div class="card-body">
-               <!-- Button -->
-<button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#popup">
-    Choisir mes préférences
-</button>
-
-<!-- Pop-up -->
-<div id="popup" class="modal">
-       <div class="modal-dialog" style="max-height: 250px">
-                <div class="modal-content">
-                 
-                 <div class="modal-body">
-                      {{form_start(preferenceForm)}}
-                        {{ form_row(preferenceForm.items) }}
-                      
-                       </div>
-
-                 <div class="modal-footer">
-                  {{form_end(preferenceForm)}}
-                    {# <button type="submit" name="submitForm" class="btn btn-outline-success" data-dismiss="modal"> c'est bon !!  </button> #}
-                       </div>
+                </ul>
+                <div class="card-body">
+                    <a role="button" class="btn btn-outline-info"
+                        href="{{ path('edit_user',{ id: utilisateur.id}) }}">Editer mon profil</a>
                 </div>
-       </div>
-</div>
-</a>
             </div>
          </div>
-      </div>
-         
-         
-      <div class="col-lg-3">
-         <div class="col-lg-6">
-            <div class="card" style="width: 18rem;">
+
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Mes préfèrences</h2>
+                </div>
+                <ul class="list-group list-group-flush">
+                    {%for item in utilisateur.items%}
+                    <li class="list-group-item">{{item.name}}</li>
+                    {%endfor%}
+                </ul>
                <div class="card-body">
-                  <h2 class="card-title">Mes matchs</h2>
+                    <!-- Button -->
+                    <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#popup">
+                        Choisir mes préférences
+                    </button>
                </div>
-               <ul class="list-group list-group-flush">
-                  {%for user in match%}
-                  <li class="list-group-item">{{user.pseudo}}</li>
-                  {%endfor%}
-               </ul>  
-               <div class="card-body">
-                  <button type="submit" class="btn btn-outline-success" href="{{ path('show_user',{ id: utilisateur.id}) }}">Voir mes matchs</button>
-               </div>
+                    <!-- Pop-up -->
+                     <div id="popup" class="modal">
+                        <div class="modal-dialog" style="max-height: 250px">
+                            <div class="modal-content">
+
+                                <div class="modal-body">
+                                    {{form_start(preferenceForm)}}
+                                    {{ form_row(preferenceForm.items) }}
+
+                                </div>
+
+                                <div class="modal-footer">
+                                    {{form_end(preferenceForm)}}
+                                    {# <button type="submit" name="submitForm" class="btn btn-outline-success"
+                                        data-dismiss="modal"> c'est bon !! </button> #}
+                                </div>
+                            </div>
+                        </div>
+                     </div>
             </div>
          </div>
-      </div>
-  </div>
-</div>
+
+        {%if match is not empty%}
+        <div class="col-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Mes matchs</h2>
+                </div>
+                <ul class="list-group list-group-flush">
+                    {%for user in match%}
+                    <li class="list-group-item">{{user.pseudo}} 
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: {{user.pourcentage}}%" aria-valuenow="{{user.pourcentage}}" aria-valuemin="0" aria-valuemax="100">{{user.pourcentage}}%</div>
+                     </div>
+                     </li>
+
+                    {%endfor%}
+
+                </ul>
+                <div class="card-body">
+                    {# <button type="submit" class="btn btn-outline-success"
+                     href="{{ path('show_user',{ id: utilisateur.id}) }}">Voir mes matchs</button> #}
+                </div>
+            </div>
+        </div>
+         {%else%}
+         <div class="col-lg-3">
+            <div class="card">
+               <div class="card-body">
+                  <h2 class="card-title">No match found</h2>
+               </div>
+               <div class="list-group list-group-flush p-3">
+                  Hé ! Renseigne tes préférences maintenant et découvre tout de suite qui matche avec toi !
+               </div>
+               <div class="card-body">
+                  <button type="submit" class="btn btn-outline-success"
+                     href="{{ path('show_user',{ id: utilisateur.id}) }}">Voir mes matchs</button>
+               </div>
+         </div>
+         {%endif%}
+      </div>   
+   </div>
     
 
-{% endblock %}     
-    
 
 
 
-      
-            
-  
-                
-   
-    
-
-    
 
 
 
+{% endblock %}
