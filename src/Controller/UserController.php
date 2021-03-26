@@ -25,6 +25,10 @@ class UserController extends AbstractController
             }
 
             $id = $this->getUser()->getId();
+            $repository = $this->getDoctrine()->getRepository(User::class);
+
+            $user = $repository->find($id);
+
             $form = $this->createForm(UserFormType::class, $user);
 
             $form->handleRequest($request);
@@ -97,11 +101,16 @@ class UserController extends AbstractController
             $pourcent = [];
             foreach ($tab as $key => $element)
             {
-                $pourcent[$key] = $usersList[$key];
-                $pourcent[$key]['pourcentage'] = round($tab[$key] * 100 / intval($userItemCount['nb']), 2);
+                $calcul = round($tab[$key] * 100 / intval($userItemCount['nb']), 2);
+                if ($calcul >= 25)
+                {
+                    $pourcent[$key] = $usersList[$key];
+                    $pourcent[$key]['pourcentage'] = $calcul;
+                }
+                
             }
             
-    
+           
         
 
         return $this->render('user/userinterface.html.twig', ['utilisateur'=>$user, 'match'=>$pourcent, 'match_items'=>$matchItems, 

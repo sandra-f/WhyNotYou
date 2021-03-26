@@ -1,22 +1,34 @@
+header{
+    background-color: rgba(248, 194, 223, 0.502);
+}
+#header p{
+    color: rgb(66, 2, 50);
+}
+#header a{
+    color: rgb(66, 2, 50);
+}
+#header a:hover{
+    color: #ce79f0;
+}
+
+
 #contenu {
     background-image:url('../img/porter.jpg');
     background-size: 100% 100%;;
     color: white;
-	font-size: 1rem;
     line-height: 2;  
 }
 
 
 #contenu p{
     font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
+    /* font-size: 1rem; */
 }
 
 #contenu a{
     color: rgb(141, 32, 83);
     text-decoration: none;
     text-align: center;
-    font-size: 2rem;
     font-family: 'Great Vibes', cursive;
 }
 
@@ -25,11 +37,6 @@
     color: rgb(82, 16, 65);
 }
 
-#contenu a, .you-h2{
-    font-size: 2em;
-    text-align: center;
-    
-}
 .carousel-inner{
     margin-top: -80px;
 }
@@ -39,19 +46,18 @@
     height: 600px;
 }
 
-#titre-h1{
+#titre-h1 {
     padding-top: 1px ;
-    padding-bottom: 15px;
-    font-size: 1.8em;
+    padding-bottom: 13px;
+
 }
 
-#intro h1{
-    font-size: 2rem;
-
+h1 a {
+    font-size: 3rem;
 }
 
 .rejoint a{
-    font-size: 1em;
+    font-size: 2rem;
     margin-top: 20px;
     
 }
@@ -63,11 +69,12 @@
 
 .you-h2{
     margin-bottom: 30px;
+    text-align: center;
 }
 .you-h2 p{
     font-family: 'Great Vibes', cursive;
     color: black;
-    font-size: 4em;
+    /* font-size: 4em; */
     font-weight: bold;
     margin-bottom: 30px;
 }
@@ -78,16 +85,23 @@
     margin-top: -40px;
 }
 
+.you-h2 a {
+    font-size: 4rem;
+}
 
-h1, h2, h3, h4{
+h1{
     font-family: 'Great Vibes', cursive;
-    font-size:1em;
     text-shadow: 9px 5px 8px rgba(114, 39, 96, 0.2);
 }
 
-h4{
-    font-size: 2em;
+h2, h3, h4{
+    font-family: 'Great Vibes', cursive;
+    text-shadow: 9px 5px 8px rgba(114, 39, 96, 0.2);
 }
+
+
+
+
 
 
 
@@ -113,7 +127,7 @@ h4{
 
 #temoignage p{
     color: rgb(12, 10, 10);
-    font-size: 0.8em;
+    /* font-size: 0.8em; */
     overflow: hidden;
     animation-duration: 10s;
     animation-name: slidein;
@@ -122,20 +136,15 @@ h4{
 
 #temoignage h4{
     color: rgb(66, 2, 50);
-    font-size: 2em;
+    /* font-size: 2em; */
 }
 
 
 
-p, h1{
+p, h1, h2, h3{
     text-align: center;
     
 }
-
-h2, h3{
-    text-align: center;
-}
-
 
 .left h4{
     text-align: left;
@@ -191,3 +200,60 @@ h2, h3{
       width: 100%;
     }
   }
+
+
+.marge h1{
+    padding-top: 40px;
+}
+
+
+.mention p{
+    text-align: left;
+}
+.mention h2{
+    text-align: left;
+    text-decoration: underline 1px;
+    margin-top: 20px;
+}
+
+.rgpd h2{
+    text-align: left;
+    text-decoration: underline 1px;
+    margin-top: 20px;
+}
+
+.rgpd p{
+    text-align: left;
+    margin-top: 20px;
+}
+
+.APropos p{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.APropos h1{
+    padding-top: 40px;
+    padding-bottom: 5px;
+}
+
+footer{
+    
+    background-color: rgba(248, 194, 223, 0.502);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+}
+#footer p{
+    color: rgb(66, 2, 50);
+}
+
+#footer a{
+    color: rgb(66, 2, 50);
+}
+#footer a:hover{
+    color: #ce79f0;
+}

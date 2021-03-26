@@ -4,9 +4,10 @@
 {% block title %}Espace utilisateur{% endblock %}
 
 {% block body %}
-<h1 class="text-center">Mon compte</h1>
+<div class="container w-100 h-100 my-4">
+<h1 class="text-center my-5">Mon compte</h1>
 
-   <div class="container my-4">
+   
       <div class="row">
          <div class="col-lg-3">
             <div class="card">
@@ -58,8 +59,8 @@
                 </ul>
                <div class="card-body">
                     <!-- Button -->
-                    <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#popup">
-                        Choisir mes préférences
+                    <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#popup">
+                        Editer mes préférences
                     </button>
                </div>
                     <!-- Pop-up -->
@@ -91,7 +92,8 @@
                     <h2 class="card-title">Mes matchs</h2>
                 </div>
                 <ul class="list-group list-group-flush">
-                    {%for user in match%}
+                    {%for user in match%}  
+
                     <li class="list-group-item">{{user.pseudo}} 
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" style="width: {{user.pourcentage}}%" aria-valuenow="{{user.pourcentage}}" aria-valuemin="0" aria-valuemax="100">{{user.pourcentage}}%</div>
@@ -101,10 +103,7 @@
                     {%endfor%}
 
                 </ul>
-                <div class="card-body">
-                    {# <button type="submit" class="btn btn-outline-success"
-                     href="{{ path('show_user',{ id: utilisateur.id}) }}">Voir mes matchs</button> #}
-                </div>
+
             </div>
         </div>
          {%else%}
@@ -117,8 +116,9 @@
                   Hé ! Renseigne tes préférences maintenant et découvre tout de suite qui matche avec toi !
                </div>
                <div class="card-body">
-                  <button type="submit" class="btn btn-outline-success"
-                     href="{{ path('show_user',{ id: utilisateur.id}) }}">Voir mes matchs</button>
+                    <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#popup">
+                        Choisir mes préférences
+                    </button>
                </div>
          </div>
          {%endif%}

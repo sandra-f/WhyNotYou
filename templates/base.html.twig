@@ -10,10 +10,10 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> 
-        <link rel="stylesheet" href="{{ asset('css/footer.css') }}" media="all">
-        <link rel="stylesheet" href="{{ asset('/css/register.css') }}" media="all">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/util.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}"> 
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/home1.css') }}">
+        
         {% endblock %}
   
     </head>
@@ -21,41 +21,42 @@
         
         <header>
         {%block header%}
-            
-                <nav class="navbar navbar-expand-lg login100">
-                    <a class="navbar-brand" href="{{ path('home') }}">WhyNotYou</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                
+                    <nav class="navbar navbar-expand-md login100">
+                        <a class="navbar-brand" id="header" href="{{ path('home') }}">WhyNotYou</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
                     </div>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        </div>
 
 
-                    <div class="collapse navbar-collapse justify-content-end">
+                        <div class="collapse navbar-collapse justify-content-end">
+                        
+                        <ul class="navbar-nav ml-auto">
+
+                        {% if app.user %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('show_user', {id:app.user.id}) }}" tabindex="-1" aria-disabled="true">Bienvenue, {{ app.user.username }} !</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('app_logout') }}" tabindex="-1" aria-disabled="true">Déconnexion</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('app_login') }}" tabindex="-1" aria-disabled="true">Se connecter</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('app_register') }}" tabindex="-1" aria-disabled="true">Créer un compte</a>
+                            </li>
+                        {% endif %}
+                        </ul>
+                        </div>
                     
-                    <ul class="navbar-nav ml-auto">
 
-                    {% if app.user %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('show_user', {id:app.user.id}) }}" tabindex="-1" aria-disabled="true">Bienvenue, {{ app.user.username }} !</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_logout') }}" tabindex="-1" aria-disabled="true">Déconnexion</a>
-                        </li>
-                    {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_login') }}" tabindex="-1" aria-disabled="true">Se connecter</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ path('app_register') }}" tabindex="-1" aria-disabled="true">Créer un compte</a>
-                        </li>
-                    {% endif %}
-                    </ul>
-                    </div>
-                   
-
-                </nav>
+                    </nav>
+                
         {%endblock%}
         </header>
 
@@ -68,12 +69,12 @@
 
                 <nav class="navbar"  >
                     <p>
-                &copy;2020,
+                &copy;2020
                     </p> 
-                    <a class="navbar-head" href="">Politique de confidentialité</a>
-                    <a class="navbar-head" href="">Mentions légales</a>
-                    <a class="navbar-head" href="">A propos</a>
-                    <a class="navbar-head" href="">Aide</a>
+                   
+                    <a class="navbar-head" href="{{ path('rgpd') }}">Mentions légales</a>
+                    <a class="navbar-head" href="{{ path('about') }}">A propos</a>
+                 
 
                 </nav>
             </div>

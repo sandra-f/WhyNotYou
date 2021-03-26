@@ -9,25 +9,30 @@
         </div>
     {% endfor %}
 
-<form method="post">
- 
-    <div class="container">   
 
-       <h1>Mon Profil</h1>
+<div style="background-image: url('../../img/ciel1.jpg')">
 
-        {{form_start(editForm)}}
+
+    <div class="container py-5 h-100">
+        <div class="p-3" style="background-color:#fc9dd78f;">
+        <h1 class="my-5">Mon Profil</h1>
         
-                {{ form_row(editForm.Ecolo) }}
-                {{ form_row(editForm.Vegan) }}
-                {{ form_row(editForm.Econome) }}
-                {{ form_row(editForm.Sportif) }}
-                {{ form_row(editForm.Fetard) }}
+            <form method="post">
 
-        {{form_end(editForm)}}
-
+                        {{form_start(editForm)}}
+                        
+                            <div style="padding-left:40%;">{{ form_row(editForm.Ecolo) }}</div>
+                            <div style="padding-left:40%;">{{ form_row(editForm.Vegan) }}</div>
+                            <div style="padding-left:40%;">{{ form_row(editForm.Econome) }}</div>
+                            <div style="padding-left:40%;">{{ form_row(editForm.Sportif) }}</div>
+                            <div style="padding-left:40%;">{{ form_row(editForm.Fetard) }}</div>
+                
+                        
+                        <div class="my-5" style="padding-left:40%;">{{form_end(editForm)}}</div>
+                      
+        </div>
     </div>
-    
-   
+</div>
 {% endblock %}
 
 
